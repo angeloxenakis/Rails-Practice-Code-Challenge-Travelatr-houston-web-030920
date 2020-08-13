@@ -1,0 +1,19 @@
+<h1>Create a Blogger</h1>
+<hr>
+<form action="/bloggers" method="POST">
+    Name: <input type="text" name="name"><br>
+    Age: <input type="text" name="age"><br>
+    Bio: <input type="textarea" name="bio"><br>
+    <input type="submit" value="Save">
+</form>
+
+<% if flash[:messages] != nil %>    
+    <% flash[:messages].each do |key,value| %>        
+        <h4>Error:<%=key%></h4><br>        
+        <ul>        
+        <% value.each do |index| %>            
+        <li><%=index%></li><br>        
+    <% end %>        
+    </ul>    
+    <% end %>
+<% end %>
